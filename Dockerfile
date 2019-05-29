@@ -32,14 +32,15 @@ RUN pip install --upgrade seaborn python-dateutil dask && \
     conda install -y -c conda-forge spacy && python -m spacy download en && \
     python -m spacy download en_core_web_lg && \
     # The apt-get version of imagemagick is out of date and has compatibility issues, so we build from source
-    apt-get -y install dbus fontconfig fontconfig-config fonts-dejavu-core fonts-droid-fallback ghostscript gsfonts hicolor-icon-theme \
+    apt-get -y install autoconf automake autotools-dev dbus fontconfig fontconfig-config \
+    fonts-dejavu-core fonts-droid-fallback ghostscript gsfonts hicolor-icon-theme \
     libavahi-client3 libavahi-common-data libavahi-common3 libcairo2 libcap-ng0 libcroco3 \
     libcups2 libcupsfilters1 libcupsimage2 libdatrie1 libdbus-1-3 libdjvulibre-text libdjvulibre21 libfftw3-double3 libfontconfig1 \
     libfreetype6 libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-common libgomp1 libgraphite2-3 libgs9 libgs9-common libharfbuzz0b libijs-0.35 \
     libilmbase12 libjbig0 libjbig2dec0 libjpeg62-turbo liblcms2-2 liblqr-1-0 libltdl7 libmagickcore-6.q16-3 \
     libmagickcore-6.q16-3-extra libmagickwand-6.q16-3 libnetpbm10 libopenexr22 libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 \
-    libpaper-utils libpaper1 libpixman-1-0 libpng16-16 librsvg2-2 librsvg2-common libthai-data libthai0 libtiff5 libwmf0.2-7 \
-    libxcb-render0 libxcb-shm0 netpbm poppler-data p7zip-full && \
+    libpaper-utils libpaper1 libpixman-1-0 libpng16-16 librsvg2-2 librsvg2-common libthai-data libthai0 libtiff5 libtool libwmf0.2-7 \
+    libxcb-render0 libxcb-shm0 netpbm pkg-config poppler-data p7zip-full && \
     cd /usr/local/src && \
     wget --no-verbose https://imagemagick.org/download/ImageMagick.tar.gz && \
     tar xzf ImageMagick.tar.gz && cd `ls -d ImageMagick-*` && pwd && ls -al && ./configure && \
